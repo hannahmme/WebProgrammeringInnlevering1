@@ -18,16 +18,30 @@
     </select>
 
     <h2>Antall: </h2>
-    <label for="antall"></label><input type="text" id="antall"/>
+    <label>
+        <input type="text" id="antall"/>
+    </label>
     <h2>Fornavn: </h2>
-    <label for="fornavn"></label><input type="text" id="fornavn" onchange="(this.value);"/><br/>
+    <label>
+        <input type="text" id="fornavn">
+    </label>
     <h2>Etternavn: </h2>
-    <label for="etternavn"></label><input type="text" id="etternavn"/><br/>
+    <label>
+        <input type="text" id="etternavn"/>
+    </label>
     <h2>Epost: </h2>
-    <label for="epost"></label><input type="text" id="epost"/><br/><br>
+    <label>
+        <input type="text" id="epost"/>
+    </label><br/>
 
+    <!--Knapp som fyller input-verdier i array-->
     <input type="button" value="Kjøp billett" onclick="registrer()"/><br/><br/>
 
+    <!--Knapp som skriver ut alle registrerte data.-->
+    <input type="button" value="Skriv ut billetter" onclick="skrivUt()"/><br/>
+
     <label for="tabell"></label><input type="text" id="tabell" style="height: 40px;">
+
+
 </body>
 </html>
