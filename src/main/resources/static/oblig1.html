@@ -1,25 +1,33 @@
 <!DOCTYPE html>
 <html lang ="en">
 <head>
-    <script src="oblig1.js"></script>
     <meta charset="UTF-8">
     <title>Kinobillettautomat</title>
+    <script src="oblig1.js"></script>
 </head>
 <body>
-    <h1>Bestilling av kinobilletter</h1><br/>
+    <h1>Bestilling av kinobilletter</h1>
     <h2>Velg film: </h2>
-    <div id="dropdown"></div><br/>
-    <h2>Antall: </h2>
-    <input type="text" id="antall"/><br/>
-    <h2>Fornavn: </h2>
-    <input type="text" id="fornavn"/><br/>
-    <h2>Etternavn: </h2>
-    <input type="text" id="etternavn"/><br/>
-    <h2>Epost: </h2>
-    <input type="text" id="epost"/><br/>
-    <input type="button" value="Kjøp billett" onclick="function registrer() {
-      
-    }"/>
 
+    <label for="filmer"></label><select id="filmer">
+        <option>---------</option>
+        <option>Shawshank Redemption</option>
+        <option>The Shining</option>
+        <option>The Untouchables</option>
+        <option>Dispicable me</option>
+    </select>
+
+    <h2>Antall: </h2>
+    <label for="antall"></label><input type="text" id="antall"/>
+    <h2>Fornavn: </h2>
+    <label for="fornavn"></label><input type="text" id="fornavn" onchange="(this.value);"/><br/>
+    <h2>Etternavn: </h2>
+    <label for="etternavn"></label><input type="text" id="etternavn"/><br/>
+    <h2>Epost: </h2>
+    <label for="epost"></label><input type="text" id="epost"/><br/><br>
+
+    <input type="button" value="Kjøp billett" onclick="registrer()"/><br/><br/>
+
+    <label for="tabell"></label><input type="text" id="tabell" style="height: 40px;">
 </body>
 </html>
