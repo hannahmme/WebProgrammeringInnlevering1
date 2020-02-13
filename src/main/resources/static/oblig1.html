@@ -6,40 +6,61 @@
     <script src="oblig1.js"></script>
 </head>
 <body>
-    <h1>Bestilling av kinobilletter</h1>
-    <h2>Velg film: </h2>
+    <h2>Bestilling av kinobilletter</h2>
 
-    <label for="filmer"></label><select id="filmer">
-        <option>---------</option>
-        <option>Shawshank Redemption</option>
-        <option>The Shining</option>
-        <option>The Untouchables</option>
-        <option>Dispicable me</option>
-    </select>
+    <table>
+    <tr><td>Velg film: </td>
 
-    <h2>Antall: </h2>
-    <label>
-        <input type="text" id="antall"/>
-    </label>
-    <h2>Fornavn: </h2>
-    <label>
-        <input type="text" id="fornavn">
-    </label>
-    <h2>Etternavn: </h2>
-    <label>
-        <input type="text" id="etternavn"/>
-    </label>
-    <h2>Epost: </h2>
-    <label>
-        <input type="text" id="epost"/>
-    </label><br/>
+    <td><select id="film">
+            <option>---------</option>
+            <option>Shawshank Redemption</option>
+            <option>The Shining</option>
+            <option>The Untouchables</option>
+            <option>Dispicable me</option>
+        </select></td></tr>
+    </table><br/>
+    <!--disables selected-->
 
+
+        <tr><td>Antall:</td>
+            <td><input type="text" id="antall"/></td>
+            <td><div id="antallId"></div></td>
+        </tr><br/><br/><br/>
+
+    <table>
+    <tr><td>Fornavn: </td>
+        <label>
+            <td><input type="text" id="fornavn"></td>
+            <td><div id="fornavnId"></div></td>
+        </label>
+    </tr>
+
+    <tr><td>Etternavn: </td>
+        <label>
+            <td><input type="text" id="etternavn"/></td>
+            <td><div id="etternavnId"></div></td>
+        </label>
+    </tr>
+
+    <tr><td>Telefonnummer: </td>
+        <label>
+            <td><input type="text" id="telefonnr"/></td>
+            <td><div id="telefonnrId"></div></td>
+        </label>
+    </tr>
+
+    <tr><td>Epost:</td>
+        <td><input type="text" id="epost"/></td>
+        <td><div id="epostId"></div></td>
+    </tr>
+
+    </table><br/>
     <!--Knapp som fyller input-verdier i array-->
-    <input type="button" value="Kjøp billett" onclick="registrer()"/><br/><br/>
+    <input type="button" value="Kjøp billett" /><br/><!--onclick="registrer()-->
+    <h2>Alle billetter</h2><br/>
+    <div type="text" id="textfield">""</div>
 
-    <!--Knapp som skriver ut alle registrerte data.-->
-    <input type="button" value="Skriv ut billetter" onclick="skrivUt()"/><br/>
-    <div type="text" id="textfield"></div>
+    <input type="button" value="Slett alle billettene"/>
 
 
 
