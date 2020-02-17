@@ -12,20 +12,31 @@
     <tr><td>Velg film: </td>
 
     <td><select id="film">
-            <option>---------</option>
+            <option label=""></option>
+            <optgroup label="Velg film">
             <option>Shawshank Redemption</option>
             <option>The Shining</option>
             <option>The Untouchables</option>
             <option>Dispicable me</option>
-        </select></td></tr>
+            </optgroup></select>
+    </td>
+        <td><div id="filmId"></div></td>
+    </tr>
     </table><br/>
     <!--disables selected-->
 
 
-        <tr><td>Antall:</td>
+
+    <table>
+        <tr>
+            <td>Antall:</td>
             <td><input type="text" id="antall"/></td>
             <td><div id="antallId"></div></td>
-        </tr><br/><br/><br/>
+        </tr>
+    </table>
+
+    <br/><br/>
+
 
     <table>
     <tr><td>Fornavn: </td>
@@ -50,16 +61,17 @@
     </tr>
 
     <tr><td>Epost:</td>
-        <td><input type="text" id="epost"/></td>
+        <td><input type="email" id="epost"/></td>
         <td><div id="epostId"></div></td>
 
     </tr>
 
     </table><br/>
-    <!--Knapp som fyller input-verdier i array-->
+
+
     <input type="button" value="Kjøp billett" onclick="registrer()"/><br/><!--onclick="registrer()-->
     <h2>Alle billetter</h2><br/>
-    <div type="text" id="textfield">""</div>
+    <div type="text" id="textfield"></div>
 
     <input type="button" value="Slett alle billettene"/>
 

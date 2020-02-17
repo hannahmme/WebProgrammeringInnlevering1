@@ -1,46 +1,67 @@
 
-const ticketList = [10];
+const ticketList = [];
 
 
 
 function registrer() {
 
-    let errorMelding = "Skriv inn i manglende felt.";
-
-    try{
-        let antall = document.getElementById("antallId").value;
-        let antNumb = Number(antall);
-
-        let tlf = document.getElementById("telefonnrId").value;
-        let tlfNumb = Number(tlf);
+    let mangelMld = "Skriv inn i manglende felt.";
+    let notNumbMsg = "Skriv inn tall i dette feltet.";
 
 
-        //Sjekker om inputfeltene ikke er tomme.
-    if (
-        document.getElementById("film").value === null ||
-        document.getElementById("antall").value === null ||
-        document.getElementById("fornavn").value === null ||
-        document.getElementById("etternavn").value === null ||
-        document.getElementById("telefonnr").value === null ||
-        document.getElementById("epost").value === null) {
+    //Inputfeltene.
+    let film = document.getElementById("film").value;
+    let antall = document.getElementById("antall").value;
+    let fornavn = document.getElementById("fornavn").value;
+    let etternavn = document.getElementById("etternavn").value;
+    let telefon = document.getElementById("telefonnr").value;
+    let epost = document.getElementById("epost").value;
 
-        document.getElementById("antallId").innerHTML = errorMelding;
-        document.getElementById("fornavnId").innerHTML = errorMelding;
-        document.getElementById("etternavnId").innerHTML = errorMelding;
-        document.getElementById("telefonnrId").innerHTML = errorMelding;
-        document.getElementById("epostId").innerHTML = errorMelding;
 
-        //Sjekker om telefon og antall faktisk er tall.
-    } else if(
-        isNaN(antNumb) ||
-        isNaN(tlfNumb)){
+    //Div-feltene feilmeldinger skal skrives ut i.
+    let divFilm = document.getElementById("filmId").innerHTML;
+    let divAntall = document.getElementById("antallId").innerHTML;
+    let divFornavn = document.getElementById("fornavnId").innerHTML;
+    let divEtternavn = document.getElementById("etternavnId").innerHTML;
+    let divTlf = document.getElementById("telefonnrId").innerHTML;
+    let divEpost = document.getElementById("epostId").innerHTML;
 
-        document.getElementById("antallId").innerHTML = errorMelding;
-        document.getElementById("telefonnrId").innerHTML = errorMelding;
 
-        //Hvis alt er riktig, opprett person og legg inn i array.
-    } else {
-        let person = {
+    /*   try {*/
+    let quantity = document.getElementById("antall").value;
+    let antNumb = Number(quantity);
+
+    let tlf = document.getElementById("telefonnr").value;
+    let tlfNumb = Number(tlf);
+
+
+    //Sjekker om inputfeltene ikke er tomme eller NaN. (Not a number).
+    if (film.length === 0) {
+        document.getElementById("filmId").innerHTML = mangelMld;
+    }  else if (antall.length === 0 || Number.isNaN(antNumb)) {
+        console.log(antNumb + "Dette er antNumb");
+        console.log(antall.length + "Dette er lengden på antall.");
+
+
+        document.getElementById("antallId").innerHTML = notNumbMsg;
+    } else if (fornavn.length === 0) {
+        document.getElementById("fornavnId").innerHTML = mangelMld;
+    } else if (etternavn.length === 0) {
+        document.getElementById("etternavnId").innerHTML = mangelMld;
+    } else if (telefon.length === 0 || Number.isNaN(tlfNumb)) {
+        document.getElementById("telefonnrId").innerHTML = notNumbMsg;
+    } else if (epost.length === 0) {
+        document.getElementById("epostId").innerHTML = mangelMld;
+    }
+        //Sjekker om input faktisk er tall.
+     /*else if (
+            !isNaN(antNumb)){
+            document.getElementById("antallId").innerHTML = notNumbMsg;
+            console.log("Nå er vi i antNumber sin if");
+
+            //Hvis alt er riktig, opprett person og legg inn i array.
+        } */ else {
+        const person = {
 
             film: document.getElementById("film").value,
             antall: document.getElementById("antall").value,
@@ -51,34 +72,22 @@ function registrer() {
 
         };
 
-        ticketList.push(person.film, person.antall, person.fornavn, person.etternavn, person.telefonnr, person.epost);
-        console.log(ticketList.length + " = her er lengden.")
-
-      /*  console.log(i+"<"+ticketList.length,i < ticketList.length);
-        console.log("i : ",i);
-        console.log("ticketList.length",ticketList.length);*/
-        }
-        /*for (let i = 0; i < 10; i++) {*/
-
-        //for (let i = 0; i < ticketList.length; i++) {
+        ticketList.push(person);
+        console.log(ticketList.length + " = her er lengden.");
 
 
-        let tabell = "<table><tr>" + "<th>Antall</th><th>Fornavn</th><th>Etternavn</th><th>Epost</th></tr></table>";
+        let tabell = "<table><tr>" + " <th>Film</th><th>Antall</th><th>Fornavn</th><th>Etternavn</th><th>Telefonnummer</th><th>Epost</th>" + "</tr>";
 
         for (let i = 0; i < ticketList.length; i++) {
             tabell += "<tr><td>" + ticketList[i].film + "</td><td>" + ticketList[i].antall + "</td><td>" + ticketList[i].fornavn + "</td>" +
-                "<td>" + ticketList[i].etternavn + "</td><td>" + ticketList[i].epost + "</td><br/>";
+                "<td>" + ticketList[i].etternavn + "</td><td>" + ticketList[i].telefonnr + "</td><td>" + ticketList[i].epost + "</td><br/>";
         }
         document.getElementById("textfield").innerHTML = tabell;
+        tabell += "</table>";
 
-        /*Setter inputfeltene blanke:*/
-        document.getElementById("antall").innerHTML = "";
-        document.getElementById("fornavn").innerHTML = "";
-        document.getElementById("etternavn").innerHTML = "";
-        document.getElementById("epost").innerHTML = "";
 
-}catch(Exception){
-        document.getElementById("fornavnId").innerHTML = errorMelding;
+
+        //onchange feltene med error gjør at tab funker til å slette
     }
 }
 
