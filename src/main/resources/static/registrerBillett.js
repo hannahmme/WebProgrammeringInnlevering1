@@ -13,7 +13,8 @@ function deleteMsg(elementId){
 function registrer() {
 
     let mangelMld = "Skriv inn i manglende felt.";
-    let notNumbMsg = "Skriv inn tall i dette feltet.";
+    let antMsg = "Skriv inn tall mellom 1 og 99 i dette feltet.";
+    let tlfMsg = "Skriv inn telefonnummer med 8 tall eller med +47 foran.";
 
 
     //Inputfeltene.
@@ -44,8 +45,8 @@ function registrer() {
         document.getElementById("filmId").innerHTML = mangelMld;
         isValid = false;
 
-    } if (antall.length === 0 || Number.isNaN(antNumb)) {
-        document.getElementById("antallId").innerHTML = notNumbMsg;
+    } if (antall.length === 0 || Number.isNaN(antNumb) || !antall.match(/^\b\d{1,2}\b$/)){
+        document.getElementById("antallId").innerHTML = antMsg;
         isValid = false;
 
     } if (fornavn.length === 0) {
@@ -56,9 +57,11 @@ function registrer() {
         document.getElementById("etternavnId").innerHTML = mangelMld;
         isValid = false;
 
-    } if (telefon.length === 0 || Number.isNaN(tlfNumb)) {
-        document.getElementById("telefonnrId").innerHTML = notNumbMsg;
+    } if (telefon.length === 0 || Number.isNaN(tlfNumb) || !telefon.match(/\b\d{8,10}\b/)) {
+        console.log("Nå er vi i if-en med telefonnr : " + telefon);
+        document.getElementById("telefonnrId").innerHTML = tlfMsg;
         isValid = false;
+
 
     } if (epost.length === 0) {
         document.getElementById("epostId").innerHTML = mangelMld;
@@ -66,7 +69,7 @@ function registrer() {
     }
 
 
-    //Hvis alt er riktig, opprett person og legg inn i array.
+    //Hvis alt er riktig/true, opprett person og legg inn i array.
     if(isValid){
         const person = {
 

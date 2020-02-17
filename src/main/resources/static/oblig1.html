@@ -11,9 +11,9 @@
     <h2>Bestilling av kinobilletter</h2>
 
     <table>
-    <tr><td>Velg film: </td>
+    <tr><td><label for="film">Velg film: </label></td>
 
-    <td><select id="film">
+    <td><select id="film" onchange="deleteMsg('filmId')">
             <option label=""></option>
             <optgroup label="Velg film">
             <option>Shawshank Redemption</option>
@@ -22,14 +22,11 @@
             <option>Dispicable me</option>
             </optgroup></select>
     </td>
-        <br/>
         <td><div class="error" id="filmId"></div></td>
     </tr>
     </table><br/>
-    <!--disables selected-->
 
-
-
+    
     <table>
         <tr>
             <td><label for="antall">Antall: </label></td>
@@ -40,13 +37,11 @@
 
     <br/><br/>
 
-
     <table>
     <tr>
         <td><label for="fornavn">Fornavn:  </label></td>
         <td><input type="text" id="fornavn" onchange="deleteMsg('fornavnId')"/></td>
         <td><div class="error" id="fornavnId"></div></td>
-
     </tr>
 
     <tr>
