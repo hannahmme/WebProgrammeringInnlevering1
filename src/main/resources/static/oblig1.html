@@ -44,7 +44,7 @@
 
     <tr><td>Telefonnummer: </td>
         <label>
-            <td><input type="text" id="telefonnr"/></td>
+            <td><input type="tel" id="telefonnr"/></td>
             <td><div id="telefonnrId"></div></td>
         </label>
     </tr>
@@ -52,11 +52,12 @@
     <tr><td>Epost:</td>
         <td><input type="text" id="epost"/></td>
         <td><div id="epostId"></div></td>
+
     </tr>
 
     </table><br/>
     <!--Knapp som fyller input-verdier i array-->
-    <input type="button" value="Kjøp billett" /><br/><!--onclick="registrer()-->
+    <input type="button" value="Kjøp billett" onclick="registrer()"/><br/><!--onclick="registrer()-->
     <h2>Alle billetter</h2><br/>
     <div type="text" id="textfield">""</div>
 
