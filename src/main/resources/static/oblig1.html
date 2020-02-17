@@ -20,6 +20,7 @@
             <option>Dispicable me</option>
             </optgroup></select>
     </td>
+        <br/>
         <td><div id="filmId"></div></td>
     </tr>
     </table><br/>
@@ -29,8 +30,8 @@
 
     <table>
         <tr>
-            <td>Antall:</td>
-            <td><input type="text" id="antall"/></td>
+            <td><label for="antall">Antall: </label></td>
+            <td><input type="text" id="antall" onchange="deleteMsg('antallId')"/></td>
             <td><div id="antallId"></div></td>
         </tr>
     </table>
@@ -39,31 +40,29 @@
 
 
     <table>
-    <tr><td>Fornavn: </td>
-        <label>
-            <td><input type="text" id="fornavn"></td>
-            <td><div id="fornavnId"></div></td>
-        </label>
+    <tr>
+        <td><label for="fornavn">Fornavn:  </label></td>
+        <td><input type="text" id="fornavn" onchange="deleteMsg('fornavnId')"/></td>
+        <td><div id="fornavnId"></div></td>
+
     </tr>
 
-    <tr><td>Etternavn: </td>
-        <label>
-            <td><input type="text" id="etternavn"/></td>
-            <td><div id="etternavnId"></div></td>
-        </label>
+    <tr>
+        <td><label for="etternavn">Etternavn:</label></td>
+        <td><input type="text" id="etternavn" onchange="deleteMsg('etternavnId')"/></td>
+        <td><div id="etternavnId"></div></td>
     </tr>
 
-    <tr><td>Telefonnummer: </td>
-        <label>
-            <td><input type="tel" id="telefonnr"/></td>
-            <td><div id="telefonnrId"></div></td>
-        </label>
+    <tr>
+        <td><label for="telefonnr">Telefonnummer:</label> </td>
+        <td><input type="text" id="telefonnr" onchange="deleteMsg('telefonnrId')"/></td>
+        <td><div id="telefonnrId"></div></td>
     </tr>
 
-    <tr><td>Epost:</td>
-        <td><input type="email" id="epost"/></td>
+    <tr>
+        <td><label for="epost">Epost:</label></td>
+        <td><input type="email" id="epost" onchange="deleteMsg('epostId')"/></td>
         <td><div id="epostId"></div></td>
-
     </tr>
 
     </table><br/>
