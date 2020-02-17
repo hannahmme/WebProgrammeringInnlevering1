@@ -25,16 +25,7 @@ function registrer() {
     let epost = document.getElementById("epost").value;
 
 
-    //Div-feltene feilmeldinger skal skrives ut i.
- /*   let divFilm = document.getElementById("filmId").innerHTML;
-    let divAntall = document.getElementById("antallId").innerHTML;
-    let divFornavn = document.getElementById("fornavnId").innerHTML;
-    let divEtternavn = document.getElementById("etternavnId").innerHTML;
-    let divTlf = document.getElementById("telefonnrId").innerHTML;
-    let divEpost = document.getElementById("epostId").innerHTML;
-*/
 
-    /*   try {*/
     let quantity = document.getElementById("antall").value;
     let antNumb = Number(quantity);
 
@@ -46,6 +37,7 @@ function registrer() {
     let isValid = true;
     //Bool som sier om vi går inn i if-ene. Gjør den det, er den false og
     //vil ikke la oss legge inn person i array.
+
 
     //Sjekker om inputfeltene ikke er tomme eller NaN. (Not a number).
     if (film.length === 0) {
@@ -88,7 +80,6 @@ function registrer() {
         };
 
         ticketList.push(person);
-        console.log(ticketList.length + " = her er lengden.");
 
 
         let tabell = "<table><tr>" + "<th>Film</th><th>Antall</th><th>Fornavn</th><th>Etternavn</th><th>Telefonnummer</th><th>Epost</th>" + "</tr>";
@@ -116,15 +107,6 @@ function registrer() {
         document.getElementById("telefonnrId").innerHTML = "";
         document.getElementById("epostId").innerHTML = "";
 
-
-
-
-
-
         //onchange feltene med error gjør at tab funker til å slette
     }
 }
-
-/*function slettArray(){
-
-}*/

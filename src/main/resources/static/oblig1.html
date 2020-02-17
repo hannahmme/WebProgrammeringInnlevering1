@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <title>Kinobillettautomat</title>
-    <script src="oblig1.js"></script>
+    <script src="registrerBillett.js"></script>
     <link rel="stylesheet" href="oblig1.css">
+    <script src="slettBillett.js"></script>
 </head>
 <body>
     <h2>Bestilling av kinobilletter</h2>
@@ -22,7 +23,7 @@
             </optgroup></select>
     </td>
         <br/>
-        <td><div id="filmId"></div></td>
+        <td><div class="error" id="filmId"></div></td>
     </tr>
     </table><br/>
     <!--disables selected-->
@@ -33,7 +34,7 @@
         <tr>
             <td><label for="antall">Antall: </label></td>
             <td><input type="text" id="antall" onchange="deleteMsg('antallId')"/></td>
-            <td><div id="antallId"></div></td>
+            <td><div class="error" id="antallId"></div></td>
         </tr>
     </table>
 
@@ -44,36 +45,36 @@
     <tr>
         <td><label for="fornavn">Fornavn:  </label></td>
         <td><input type="text" id="fornavn" onchange="deleteMsg('fornavnId')"/></td>
-        <td><div id="fornavnId"></div></td>
+        <td><div class="error" id="fornavnId"></div></td>
 
     </tr>
 
     <tr>
         <td><label for="etternavn">Etternavn:</label></td>
         <td><input type="text" id="etternavn" onchange="deleteMsg('etternavnId')"/></td>
-        <td><div id="etternavnId"></div></td>
+        <td><div class="error" id="etternavnId"></div></td>
     </tr>
 
     <tr>
         <td><label for="telefonnr">Telefonnummer:</label> </td>
         <td><input type="text" id="telefonnr" onchange="deleteMsg('telefonnrId')"/></td>
-        <td><div id="telefonnrId"></div></td>
+        <td><div class="error" id="telefonnrId"></div></td>
     </tr>
 
     <tr>
         <td><label for="epost">Epost:</label></td>
         <td><input type="email" id="epost" onchange="deleteMsg('epostId')"/></td>
-        <td><div id="epostId"></div></td>
+        <td><div class="error" id="epostId"></div></td>
     </tr>
 
     </table><br/>
 
 
-    <input type="button" value="Kjøp billett" onclick="registrer()"/><br/><!--onclick="registrer()-->
+    <input type="button" value="Kjøp billett" onclick="registrer()"/><br/>
     <h2>Alle billetter</h2><br/>
     <div type="text" id="textfield"></div>
 
-    <input type="button" value="Slett alle billettene"/>
+    <input type="button" value="Slett alle billettene" onclick="deleteReg()"/>
 
 
 
