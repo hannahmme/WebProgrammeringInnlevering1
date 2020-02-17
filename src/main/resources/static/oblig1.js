@@ -42,6 +42,7 @@ function registrer() {
     let tlfNumb = Number(tlf);
 
 
+
     let isValid = true;
     //Bool som sier om vi går inn i if-ene. Gjør den det, er den false og
     //vil ikke la oss legge inn person i array.
